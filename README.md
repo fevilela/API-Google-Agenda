@@ -55,6 +55,35 @@
     <br>
     <li>Após criar as credenciais, faça o download do arquivo JSON. Este arquivo contém o client_id, project_id e client_secret que serão usados pelo script.</li>
   </ul>
+ <br>
   <li>Configuração do Script:</li>
-  
+  <p>Salve o arquivo JSON das credenciais no mesmo diretório do script e modifique o script para usar este arquivo. Aqui está um exemplo da estrutura do arquivo JSON:</p>
+<code>{
+  "installed": {
+    "client_id": "SEU_CLIENT_ID",
+    "project_id": "SEU_PROJECT_ID",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_secret": "SEU_CLIENT_SECRET",
+    "redirect_uris": ["http://localhost"]
+  }
+}
+</code>
+<br>
+ <li>Execução do Script:</li>
+ <p>Execute o script no terminal ou ambiente de desenvolvimento Python:</p>
+ <code>python google_agenda_csv.py</code>
+ <br><br>
+ <p>Durante a primeira execução, uma janela do navegador será aberta para você autenticar e autorizar o acesso aos seus calendários do Google. O token de acesso será salvo no arquivo token.pickle para reutilização.</p>
+ <br>
+ <li>Exemplo de Uso:</li>
+<p>Abaixo está um exemplo de como o script salva eventos no arquivo CSV especificado:</p>
+ <code># Caminho do arquivo onde os dados serão salvos
+file_path = 'caminho/para/seu/arquivo/google_calendar_events.csv'
+save_events_to_csv(all_events, file_path)</code>
+<br><br>
+<p>Você pode modificar file_path para qualquer diretório e nome de arquivo desejado.</p>
 </ol>
+<h2>Conclusão</h2>
+<p>O script "Google Agenda CSV" é uma ferramenta útil para extrair, analisar e compartilhar dados de eventos do Google Calendar. Ele permite uma visão detalhada dos eventos, verifica conflitos e facilita a manipulação dos dados através do formato CSV. Siga os passos de configuração cuidadosamente para garantir que o script funcione corretamente.</p>
